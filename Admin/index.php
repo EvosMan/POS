@@ -7,7 +7,7 @@ $i2 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(subtotal) as totdpt FRO
 $i3 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(subtotal-qty*harga_modal) as totdpt1 FROM laporan"));
 $i4 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(subtotal) as isub FROM laporan"));
 ?>
-<h1 class="h3 mb-2">Data Invoice</h1>
+<h1 class="h3 mb-2">Laporan</h1>
 <div class="row">
 
   <div class="col-6 col-sm-6 col-md-3 col-lg-3 m-pr-1 m-mb-1">
@@ -51,7 +51,6 @@ $i4 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(subtotal) as isub FROM 
       <th>Kembalian</th>
       <th>Outlet</th>
       <th>Tanggal</th>
-      <th>Opsi</th>
     </tr>
   </thead>
   <tbody>
@@ -89,11 +88,6 @@ $i4 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(subtotal) as isub FROM 
         <td><?php echo $d['toko']; ?></td>
         <td><?php echo $d['tgl_inv']; ?></td>
         <td>
-          <form method="post">
-            <input type="hidden" name="nona" value="<?php echo $oninv ?>">
-            <button type="submit" name="Remove" class="btn btn-danger btn-xs">
-              <i class="fas fa-trash-alt fa-xs mr-1"></i>Hapus</button>
-          </form>
         </td>
       </tr>
     <?php } ?>
