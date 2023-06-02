@@ -51,7 +51,7 @@ $i4 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(subtotal) as isub FROM 
       <th>Kembalian</th>
       <th>Outlet</th>
       <th>Tanggal</th>
-      <th>Opsi</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -88,28 +88,13 @@ $i4 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(subtotal) as isub FROM 
         <td>Rp.<?php echo ribuan($d['kembalian']); ?></td>
         <td><?php echo $d['toko']; ?></td>
         <td><?php echo $d['tgl_inv']; ?></td>
-        <td>
-          <form method="post">
-            <input type="hidden" name="nona" value="<?php echo $oninv ?>">
-            <button type="submit" name="Remove" class="btn btn-danger btn-xs">
-              <i class="fas fa-trash-alt fa-xs mr-1"></i>Hapus</button>
-          </form>
-        </td>
+        
       </tr>
     <?php } ?>
   </tbody>
 </table>
 <?php
-if (isset($_POST['Remove'])) {
-  $nona = $_POST['nona'];
-  $hapus_data_Cart_all = mysqli_query($conn, "DELETE FROM laporan WHERE invoice='$nona'");
-  $hapus_data_Cart_all1 = mysqli_query($conn, "DELETE FROM invoice WHERE invoice='$nona'");
-  if ($hapus_data_Cart_all && $hapus_data_Cart_all1) {
-    echo '<script>;window.location="laporan.php"</script>';
-  } else {
-    echo '<script>alert("Gagal Hapus Data keranjang");history.go(-1);</script>';
-  }
-};
+
 ?>
 
 <!-- end isinya -->
