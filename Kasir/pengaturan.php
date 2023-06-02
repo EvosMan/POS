@@ -94,7 +94,7 @@ if(isset($_POST['UpdatePass'])){
                     <div class="row">
                         <div class="col-sm-6 col-md-6 mb-2">
                             <label for="namatoko">Nama Toko<span class="text-danger">*</span></label>
-                            <input name="toko" type="text" class="form-control" value="<?php echo $toko ?>" id="namatoko" placeholder="nama toko" required>
+                            <input name="toko" readonly type="text" class="form-control" value="<?php echo $toko ?>" id="namatoko" placeholder="nama toko" required>
                         </div>
                         <div class="col-sm-6 col-md-6 mb-2">
                             <label for="username">Username<span class="text-danger">*</span></label>
