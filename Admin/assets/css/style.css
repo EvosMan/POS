@@ -376,7 +376,7 @@ a{
 .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
 .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
 .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
-    background: #012201;
+    background: v;
 
 }
 
@@ -385,7 +385,7 @@ a{
 }
 .box-laporan{
   padding: 0.7rem;
-  background: #4c6ef8;
+  background: #012201;
   border-radius:0.2rem;
 }
 .box-laporan p{
