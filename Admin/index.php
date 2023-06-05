@@ -1,5 +1,5 @@
 <?php include 'sidebar.php'; ?>
-
+<a href="Terjual.php"><button class="btn btn-primary btn-sm border-0 float-right" >Data Terjual</button></a>
 <!-- isinya -->
 <?php
 $i1 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(qty) as totqty FROM laporan"));
@@ -12,8 +12,10 @@ $i4 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(subtotal) as isub FROM 
 
   <div class="col-6 col-sm-6 col-md-3 col-lg-3 m-pr-1 m-mb-1">
     <div class="box-laporan">
+      <a href="Terjual.php">
       <p class="small mb-0">Terjual</p>
       <h5 class="mb-0"><?php echo ribuan($i1['totqty']); ?></h5>
+      </a>
     </div>
   </div>
 

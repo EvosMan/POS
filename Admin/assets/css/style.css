@@ -308,6 +308,8 @@ a{
 }
 
 .btn-primary{
+
+      margin: 5rem 0;
   background: #4c6ef8;
   color: #fff;
 }
@@ -387,6 +389,10 @@ a{
   padding: 0.7rem;
   background: #012201;
   border-radius:0.2rem;
+}
+.box-laporan a:hover {
+  background: #ffd4d4;
+ 
 }
 .box-laporan p{
   color: #d4ddff;

@@ -392,6 +392,10 @@ a{
   color: #d4ddff;
   letter-spacing: 1px;
 }
+.box-laporan a:hover i{
+  color: #d4ddff;
+ 
+}
 .box-laporan h5{
   color: #ffffff;
   font-size:25px;
