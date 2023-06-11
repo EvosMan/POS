@@ -72,12 +72,7 @@ $logo = $DataLogin['logo'];
               <span>Laporan</span>
             </a>
           </li>
-          <li>
-            <a href="pengaturan.php">
-              <i class="fa fa-cog"></i>
-              <span>Pengaturan</span>
-            </a>
-          </li>
+          
           <li>
             <a href="#Exit" data-toggle="modal">
               <i class="fa fa-power-off"></i>
