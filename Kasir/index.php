@@ -27,8 +27,8 @@ $jsArray2 = "var harga_modal = new Array();";
     </div>
     <div class="col-sm-4 col-md-4 col-lg-3 mb-3">
       <label class="small text-muted mb-1">Nama Produk</label>
-      <input type="text" name="Cnproduk" id="nama_produk" class="form-control form-control-sm bg-light" readonly>
-      <input type="hidden" name="harga_modal" id="harga_modal">
+      <input type="text"  name="Cnproduk" id="nama_produk" onchange="InputSub()" autocomplete="off" class="form-control form-control-sm bg-light" required onkeypress="return false;" >
+      <input type="hidden" name="harga_modal" onchange="InputSub()" id="harga_modal">
     </div>
     <div class="col-8 col-sm-4 col-md-4 col-lg-2 mb-3">
       <label class="small text-muted mb-1">Harga</label>
