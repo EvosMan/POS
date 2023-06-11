@@ -11,12 +11,12 @@ if(isset($_POST['SimpanEdit'])){
     $addr = htmlspecialchars($_POST['alamat']);
     $pass = mysqli_real_escape_string($conn,$_POST['password']);
 
-    $queryuser = mysqli_query($conn,"SELECT * FROM kasir WHERE userid='$uid'");
+    $queryuser = mysqli_query($conn,"SELECT * FROM admin WHERE userid='$uid'");
     $cariuser = mysqli_fetch_assoc($queryuser);
 
     if( $pass === $cariuser['password'])  {
         if($cariuser){ 
-        $cekDataUpdate =  mysqli_query($conn, "UPDATE kasir SET username='$uname',
+        $cekDataUpdate =  mysqli_query($conn, "UPDATE admin SET username='$uname',
         toko='$ntoko',telepon='$telp',alamat='$addr'
          WHERE userid='$uid'") or die(mysqli_connect_error());
         if($cekDataUpdate){
@@ -33,7 +33,7 @@ if(isset($_POST['SimpanEdit'])){
 if(isset($_POST['UpdatePass'])){
     $pass1 = mysqli_real_escape_string($conn,$_POST['pswd1']);
 
-    $querypass = mysqli_query($conn,"SELECT * FROM kasir WHERE userid='$uid'");
+    $querypass = mysqli_query($conn,"SELECT * FROM admin WHERE userid='$uid'");
     $caripass = mysqli_fetch_assoc($querypass);
 
     if( password_verify($pass1, $caripass['password']) ) {
@@ -43,7 +43,7 @@ if(isset($_POST['UpdatePass'])){
             $pass3 = password_hash($_POST['pswd3'], PASSWORD_DEFAULT);
 
             if (password_verify($pass2, $pass3)) {
-                $cekPass =  mysqli_query($conn, "UPDATE kasir SET password='$pass3'
+                $cekPass =  mysqli_query($conn, "UPDATE admin SET password='$pass3'
                     WHERE userid='$uid'") or die(mysqli_connect_error());
                     if($cekPass){
                         echo '<script>alert("Password Berhasil di update");history.go(-1);</script>';

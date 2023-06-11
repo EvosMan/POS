@@ -21,7 +21,7 @@
   <tbody>
     <?php
     $no = 1;
-    $data_laporan = mysqli_query($conn, "SELECT kode_produk,nama_produk,harga,sum(qty) as terjual FROM laporan GROUP BY kode_produk");
+    $data_laporan = mysqli_query($conn, "SELECT kode_produk,nama_produk,harga,sum(qty) as terjual FROM laporan GROUP BY kode_produk ORDER BY terjual DESC");
     while ($d = mysqli_fetch_array($data_laporan)) {
       $oninv = $d['invoice'];
     ?>
