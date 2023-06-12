@@ -1,4 +1,12 @@
 <?php include 'sidebar.php'; ?>
+<?php if ($_SESSION['msg']) : ?>
+  <script>
+    alert('<?= $_SESSION['msg'] ?>');
+  </script>
+
+  <?php unset($_SESSION['msg']) ?>
+<?php endif ?>
+
 <?php $dataselect = mysqli_query($conn, "SELECT * FROM inventory");
 $jsArray = "var nama_produk = new Array();";
 $jsArray1 = "var harga_jual = new Array();";
@@ -27,7 +35,7 @@ $jsArray2 = "var harga_modal = new Array();";
     </div>
     <div class="col-sm-4 col-md-4 col-lg-3 mb-3">
       <label class="small text-muted mb-1">Nama Produk</label>
-      <input type="text"  name="Cnproduk" id="nama_produk" onchange="InputSub()" autocomplete="off" class="form-control form-control-sm bg-light" required onkeypress="return false;" >
+      <input type="text" name="Cnproduk" id="nama_produk" onchange="InputSub()" autocomplete="off" class="form-control form-control-sm bg-light" required onkeypress="return false;">
       <input type="hidden" name="harga_modal" onchange="InputSub()" id="harga_modal">
     </div>
     <div class="col-8 col-sm-4 col-md-4 col-lg-2 mb-3">
@@ -158,7 +166,6 @@ $itungtrans3 = $itungtrans2['jumlahtrans'];
       <p class="small text-muted mb-0">Total Item</p>
       <h3 class="mb-0" style="font-weight:600;">Rp. <?php echo ribuan($itungtrans3) ?></h3>
     </div>
-
   </div>
 </div>
 <!-- end isinya -->

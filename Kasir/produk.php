@@ -175,7 +175,6 @@ if(isset($_POST['SimpanEdit'])){
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
         <button type="submit"  name="TambahProduk" class="btn btn-primary">Simpan </button>
-        
       </div>
     </form>
     </div>

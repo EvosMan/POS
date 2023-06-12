@@ -41,12 +41,20 @@ if (isset($_POST['InputCart'])) {
     $Input5 = htmlspecialchars($_POST['Csubs']);
     $hrg_m = htmlspecialchars($_POST['harga_modal']);
 
-
     $cekDulu = mysqli_query($conn, "SELECT * FROM penjualan ");
     $liat = mysqli_num_rows($cekDulu);
     $f = mysqli_fetch_array($cekDulu);
     $inv_c = $f['invoice'];
     $ii = htmlspecialchars($_POST['Cqty']);
+
+    $sql = "SELECT * FROM inventory WHERE kode_produk = '$Input1'";
+    $data_inventory = mysqli_query($conn, $sql)->fetch_assoc();
+
+    if ($data_inventory['stok'] < 1) {
+        $_SESSION['msg'] = "Stok habis";
+        die('<script>window.location="index.php"</script>');
+    }
+
 
     if ($liat > 0) {
         $cekbrg = mysqli_query($conn, "SELECT * FROM penjualan WHERE kode_produk='$Input1' and invoice='$inv_c'");
